@@ -1,0 +1,112 @@
+,business_status,formatted_address,latitud,longitud,opening_hours,hora,dia,rating,user_ratings_total,cp,distrito
+English Wooks,OPERATIONAL,"Av. dels Tamarindes, 39, Campanar, 46015 València, Valencia, España",39.4791365,-0.4024174,{'open_now': True},14:50:40,2024-02-09,4.3,34,46015,Benicalap
+Libreria UNED,OPERATIONAL,"C/ de la Casa de la Misericòrdia, 34, L'Olivereta, 46014 Valencia, España",39.4644275,-0.4115695,{'open_now': True},14:50:38,2024-02-09,4.3,19,46014,Olivereta
+Libro Ideas - Nuevo Centro,OPERATIONAL,"Av. de Pius XII, 2, Campanar, 46009 València, Valencia, España",39.48039259999999,-0.3898637,{'open_now': True},14:50:43,2024-02-09,4.5,175,46009,Campanar
+El Cresol,OPERATIONAL,"C. del Músic Barbieri, 7, izqu, Patraix, 46018 Valencia, España",39.4611738,-0.3941695,{'open_now': True},14:50:44,2024-02-09,4.7,382,46018,Patraix
+Far de paper,OPERATIONAL,"C/ de la Democràcia, 95, L'Olivereta, 46014 València, Valencia, España",39.4724874,-0.4066577,{'open_now': False},14:50:36,2024-02-09,5,3,46014,Olivereta
+Librería Soriano,OPERATIONAL,"C/ de Xàtiva, 15, Ciutat Vella, 46002 València, Valencia, España",39.4676022,-0.3765376,{'open_now': True},14:50:44,2024-02-09,4.4,1813,46002,Ciutat Vella
+Papelería - Librería Öz,OPERATIONAL,"C/ de José Grollo, 53, Benicalap, 46025 València, Valencia, España",39.4909936,-0.3909878,{'open_now': True},14:50:37,2024-02-09,4.8,308,46025,Benicalap
+Casa del Libro,OPERATIONAL,"Avinguda del Professor López Piñero, 16 Centro Comercial Saler, C96-C97, 46013 Valencia, España",39.4525752,-0.3563018,{'open_now': True},14:50:44,2024-02-09,4.4,1698,46013,Quatre Carreres
+Librería de Idiomas Babel,OPERATIONAL,"C/ del Pla de la Saïdia, 18, La Saïdia, 46009 València, Valencia, España",39.4830474,-0.3811601,{'open_now': True},14:50:40,2024-02-09,4.2,225,46009,Campanar
+Elena Librería,OPERATIONAL,"Carrer de Manolo Taberner, 38, L'Olivereta, 46018 València, Valencia, España",39.4711342,-0.398221,{'open_now': False},14:50:40,2024-02-09,4,3,46018,Patraix
+Librería Zamenhof,OPERATIONAL,"C/ del Doctor Zamenhof, 54, Extramurs, 46008 València, Valencia, España",39.4746238,-0.3948073,{'open_now': False},14:50:40,2024-02-09,4.7,77,46008,Extramurs
+Librería Releo,OPERATIONAL,"C/ de Francisco Moreno Usedo, 30, L'Olivereta, 46018 València, Valencia, España",39.47219949999999,-0.3972323,{'open_now': False},14:50:40,2024-02-09,4.2,47,46018,Patraix
+Librería Tirant lo Blanch,OPERATIONAL,"Carrer del Gravador Esteve, 5, L'Eixample, 46004 València, Valencia, España",39.4711105,-0.3675675,{'open_now': True},14:50:44,2024-02-09,4.5,67,46004,L'Eixample
+Libreria- Papeleria TINA,OPERATIONAL,"Av. de la Plata, 15, Quatre Carreres, 46013 València, Valencia, España",39.453769,-0.3707477,{'open_now': True},14:50:44,2024-02-09,4.5,78,46013,Quatre Carreres
+El Cárabo,OPERATIONAL,"Carrer de Sant Jacint Castanyeda, 8, Quatre Carreres, 46004 València, Valencia, España",39.4598171,-0.3627705,{'open_now': True},14:50:42,2024-02-09,4.1,31,46004,L'Eixample
+Cuánto Cuento,OPERATIONAL,"Carrer de Salamanca, 16, L'Eixample, 46005 València, Valencia, España",39.4667046,-0.3649056,{'open_now': True},14:50:44,2024-02-09,1,1,46005,L'Eixample
+Re-Read Librería Lowcost,OPERATIONAL,"Gran Vía de Ramón y Cajal, 45, Extramurs, 46007 Valencia, España",39.4674215,-0.3832923,{'open_now': False},14:50:40,2024-02-09,4.5,996,46007,Extramurs
+Libreria Salamanca,OPERATIONAL,"Carrer de Salamanca, 42, L'Eixample, 46005 València, Valencia, España",39.4647967,-0.3634585,{'open_now': False},14:50:42,2024-02-09,4.8,30,46005,L'Eixample
+Libreria,OPERATIONAL,"Carrer de Dénia, L'Eixample, 46006 València, Valencia, España",39.4634813,-0.3737323,,14:50:44,2024-02-09,4,2,46006,L'Eixample
+Librería miranfú,OPERATIONAL,"C/ dels Centelles, 23, L'Eixample, 46006 València, Valencia, España",39.4594641,-0.3722099,{'open_now': False},14:50:44,2024-02-09,4.7,102,46006,L'Eixample
+Libreria De OCasión,OPERATIONAL,"Carrer del Mestre Gozalbo, 6, L'Eixample, 46005 València, Valencia, España",39.4659189,-0.3699957,,14:50:44,2024-02-09,5,1,46005,L'Eixample
+Papelería Barco de Papel,OPERATIONAL,"Carrer de Salamanca, 47, L'Eixample, 46005 València, Valencia, España",39.464386,-0.3627177,{'open_now': True},14:50:42,2024-02-09,4.9,65,46005,L'Eixample
+Librería Bartleby,OPERATIONAL,"C/ de Cadis, 50, L'Eixample, 46006 València, Valencia, España",39.46163689999999,-0.3735358,{'open_now': False},14:50:44,2024-02-09,4.7,290,46006,L'Eixample
+Librería Viridiana,OPERATIONAL,"C/ de les Arts Gràfiques, 38, El Pla del Real, 46010 València, Valencia, España",39.47580019999999,-0.3596334,{'open_now': True},14:50:43,2024-02-09,4.7,30,46010,Pla del Real
+Librería El Imperio,OPERATIONAL,"Carrer de Sueca, 29, L'Eixample, 46006 València, Valencia, España",39.4619319,-0.3752872,{'open_now': False},14:50:44,2024-02-09,4.8,329,46006,L'Eixample
+Ubik Café Cafetería Librería,OPERATIONAL,"Carrer del Literat Azorín, 13, L'Eixample, 46003 València, Valencia, España",39.4604432,-0.3738929,{'open_now': True},14:50:44,2024-02-09,4.3,3841,46003,Ciutat Vella
+Llibreria De Vell Ruzafa,OPERATIONAL,"Carrer de Dénia, 14, L'Eixample, 46004 València, Valencia, España",39.4635,-0.3736278,{'open_now': False},14:50:44,2024-02-09,4.6,14,46004,L'Eixample
+La Primera Libros,OPERATIONAL,"C/ de Guillem de Castro, 106, Ciutat Vella, 46003 València, Valencia, España",39.4776865,-0.3834425,{'open_now': False},14:50:40,2024-02-09,4.6,78,46003,Ciutat Vella
+José Antonio López Herrero,OPERATIONAL,"Gran Via de Ferran el Catòlic, 70, Extramurs, 46008 Valencia, España",39.4749895,-0.3878887,{'open_now': False},14:50:40,2024-02-09,5,1,46008,Extramurs
+Llibreria Ramon Llull,OPERATIONAL,"C/ de la Corona, 5, Ciutat Vella, 46003 València, Valencia, España",39.4776975,-0.3810918,{'open_now': False},14:50:27,2024-02-09,4.8,280,46003,Ciutat Vella
+Leolo. Librería infantil y juvenil internacional y juguetería didáctica.,OPERATIONAL,"C/ del Túria, 50, Extramurs, 46008 València, Valencia, España",39.4773561,-0.3852891,{'open_now': False},14:50:26,2024-02-09,4.7,208,46008,Extramurs
+La Benebotiga,OPERATIONAL,"C/ de la Corona, 36, Ciutat Vella, 46003 València, Valencia, España",39.4788181,-0.3830386,{'open_now': True},14:50:26,2024-02-09,4.2,5,46003,Ciutat Vella
+Librería Izquierdo,OPERATIONAL,"Gran Via de Ferran el Catòlic, 12, Extramurs, 46008 Valencia, España",39.47050309999999,-0.3847126,{'open_now': False},14:50:40,2024-02-09,4.5,88,46008,Extramurs
+Libreria Laia,OPERATIONAL,"Carrer del Moro Zeid, 2, Ciutat Vella, 46001 València, Valencia, España",39.475367,-0.3806693,{'open_now': False},14:50:30,2024-02-09,0,0,46001,Ciutat Vella
+Librería oferta,OPERATIONAL,"Plaça de la Verge, 8, Ciutat Vella, 46003 València, Valencia, España",39.4766806,-0.3749548,,14:50:30,2024-02-09,0,0,46003,Ciutat Vella
+EDISOL LIBROS,OPERATIONAL,"C/ del Pla de la Saïdia, 18, La Saïdia, 46009 València, Valencia, España",39.483032,-0.3811099,{'open_now': False},14:50:27,2024-02-09,5,2,46009,Campanar
+PAPELERÍA BELLVER,OPERATIONAL,"Av. de Burjassot, 245, Benicalap, 46015 València, Valencia, España",39.4948957,-0.396144,{'open_now': False},14:50:27,2024-02-09,4.8,93,46015,Benicalap
+Papelería El Parque,OPERATIONAL,"EL PARQUE, C/ de José Grollo, 135, bajo ( PAPELERIA, Benicalap, 46025 València, Valencia, España",39.494223,-0.3946658,{'open_now': False},14:50:27,2024-02-09,4.6,231,46025,Benicalap
+Libreria Papeleria Agustí S.L.,OPERATIONAL,"C/ del Marqués de Montortal, 10, Rascanya, 46019 València, Valencia, España",39.4927492,-0.3747292,{'open_now': False},14:50:37,2024-02-09,4.4,44,46019,Rascanya
+La Librería de Le Monde diplomatique,OPERATIONAL,"C. del Pintor Sorolla, nº 19, 3º, Ciutat Vella, 46002 València, Valencia, España",39.4707268,-0.3737487,,14:50:30,2024-02-09,0,0,46002,Ciutat Vella
+Todos Contentos y Yo Tambien Libreria,OPERATIONAL,"Plaça de Mossén Sorell, 10, Ciutat Vella, 46003 València, Valencia, España",39.4779748,-0.380234,{'open_now': False},14:50:27,2024-02-09,5,24,46003,Ciutat Vella
+La Traca llibreria i papereria,OPERATIONAL,"C/ d'Enric Navarro, 15, Benimaclet, 46020 València, Valencia, España",39.485102,-0.3590867,{'open_now': False},14:50:37,2024-02-09,4.8,153,46020,Benimaclet
+Librería La Rossa,OPERATIONAL,"Carrer de la Murta, 6, Benimaclet, 46020 València, Valencia, España",39.4860733,-0.3582687,{'open_now': False},14:50:37,2024-02-09,4.8,250,46020,Benimaclet
+Papeleria - Libreria Benipaper,OPERATIONAL,"C. de l'Arquitecte Arnau, 57, Benimaclet, 46020 València, Valencia, España",39.4860823,-0.3564793,{'open_now': False},14:50:28,2024-02-09,4.7,96,46020,Benimaclet
+No disponible,OPERATIONAL,"Plaça d'Emili Beüt i Belenguer, 7, Benimaclet, 46020 València, Valencia, España",39.489521,-0.3567468,{'open_now': False},14:50:28,2024-02-09,5,13,46020,Benimaclet
+Estudio 64 +Librería-Galería +Ilustración,OPERATIONAL,"Carrer de Benicolet, 2, Benimaclet, 46020 València, Valencia, España",39.48646919999999,-0.3591147,{'open_now': False},14:50:37,2024-02-09,4.8,132,46020,Benimaclet
+PAPELERIA -LIBRERIA- PASQUI,OPERATIONAL,"pasqui.pascual@gmail.com, C/SALVADOR ALMENAR 2, Benimaclet, tel.963, 692 857, bajo A, 46020 Valencia, España",39.4880863,-0.3609895,{'open_now': False},14:50:37,2024-02-09,4.9,27,46020,Benimaclet
+Mercado del Libro Usado de Benimaclet,OPERATIONAL,"C/ de Sant Columbà, 14, bajo, Benimaclet, 46020 Valencia, España",39.4899155,-0.3574724,{'open_now': False},14:50:28,2024-02-09,3.9,131,46020,Benimaclet
+Cafetería Librería Letras y Vinos,OPERATIONAL,"C/ del Músic Belando, 15, Benimaclet, 46020 València, Valencia, España",39.48752,-0.35959,{'open_now': False},14:50:28,2024-02-09,4.7,166,46020,Benimaclet
+Libro Ideas - Arena,OPERATIONAL,"C.C. Arena, C/ de Santa Genoveva Torres, 21, 46019 València, España",39.4952455,-0.3627185,{'open_now': True},14:50:37,2024-02-09,4.4,344,46019,Rascanya
+LIBRERIA PAPELERIA BLANCO Y NEGRO,OPERATIONAL,"Av. de Valladolid, 11, Benimaclet, 46020 València, Valencia, España",39.489082,-0.3598321,{'open_now': False},14:50:28,2024-02-09,4.4,68,46020,Benimaclet
+La Librería UPV (Editorial UPV),OPERATIONAL,"Camí de Vera, S/N, Algirós, 46022 València, Valencia, España",39.48150860000001,-0.344335,{'open_now': True},14:50:42,2024-02-09,4.9,15,46022,Camins al Grau
+Librería Primado,OPERATIONAL,"Av. del Primat Reig, 102, El Pla del Real, 46010 València, Valencia, España",39.4815479,-0.3600495,{'open_now': False},14:50:28,2024-02-09,4.7,162,46010,Pla del Real
+Punto y Coma,OPERATIONAL,"Carrer de Ramon Llull, 41, Algirós, 46021 València, Valencia, España",39.4777629,-0.3464906,{'open_now': True},14:50:42,2024-02-09,0,0,46021,Pla del Real
+La Repartidora,OPERATIONAL,"C. del Reverend Rafael Tramoyeres, 8, Benimaclet, 46020 València, Valencia, España",39.4851087,-0.3614322,{'open_now': False},14:50:28,2024-02-09,4.9,129,46020,Benimaclet
+Kiosko Pepa,OPERATIONAL,"C/ d'Emili Baró, Benimaclet, 46020 València, Valencia, España",39.49034839999999,-0.3594517,{'open_now': False},14:50:28,2024-02-09,3,2,46020,Benimaclet
+Libreria Gaia,OPERATIONAL,"Carrer de Daniel Balaciart, 4, Benimaclet, 46020 València, Valencia, España",39.4799131,-0.3560846,{'open_now': False},14:50:28,2024-02-09,4.8,96,46020,Benimaclet
+Abacus Cooperativa | Arena,OPERATIONAL,"C/ de Santa Genoveva Torres, 21, Rascanya, 46019 València, Valencia, España",39.4943754,-0.362413,{'open_now': True},14:50:37,2024-02-09,4,86,46019,Rascanya
+Librerias París-Valencia,OPERATIONAL,"C. de Navellos, 8, Ciutat Vella, 46003 València, Valencia, España",39.476855,-0.3750415,{'open_now': False},14:50:30,2024-02-09,4.5,270,46003,Ciutat Vella
+Arribada Llibres,OPERATIONAL,"C/ de l'Hedra, 2, Ciutat Vella, 46001 València, Valencia, España",39.4726067,-0.3784661,{'open_now': False},14:50:30,2024-02-09,4.8,26,46001,Ciutat Vella
+Llibreria Fan Set,OPERATIONAL,"C. de Sant Ferran, 12, Ciutat Vella, 46001 València, Valencia, España",39.4729986,-0.3770216,{'open_now': False},14:50:30,2024-02-09,4.7,33,46001,Ciutat Vella
+PRAXIS : Librería Asociativa,OPERATIONAL,"C/ de les Avellanes, 8, Ciutat Vella, 46003 València, Valencia, España",39.4742239,-0.3743941,{'open_now': False},14:50:30,2024-02-09,5,14,46003,Ciutat Vella
+"Libreria ""La Guarida de las Maravillas""",OPERATIONAL,"C/ de la Tapineria, 12, Ciutat Vella, 46001 València, Valencia, España",39.4745087,-0.3764535,{'open_now': False},14:50:30,2024-02-09,4.4,77,46001,Ciutat Vella
+Librería Patagonia,OPERATIONAL,"C. del Hospital, 1, Ciutat Vella, 46001 Valencia, España",39.47104059999999,-0.3803023,{'open_now': False},14:50:39,2024-02-09,4.7,244,46001,Ciutat Vella
+Libreria de lance,OPERATIONAL,"Plaça de la Mare de Déu de la Pau, 2, Ciutat Vella, 46001 València, Valencia, España",39.4741907,-0.376855,{'open_now': False},14:50:30,2024-02-09,4,1,46001,Ciutat Vella
+Libreria Al Tossal,OPERATIONAL,"C/ de Balmes, 11, Ciutat Vella, 46001 València, Valencia, España",39.473442,-0.381534,{'open_now': False},14:50:30,2024-02-09,3.5,41,46001,Ciutat Vella
+Librería Paulinas,OPERATIONAL,"Pça. de la Reina, 2, Ciutat Vella, 46003 València, Valencia, España",39.473939,-0.3751467,{'open_now': False},14:50:30,2024-02-09,4.6,344,46003,Ciutat Vella
+El Asilo del Libro,OPERATIONAL,"C. de Sant Ferran, 14, Ciutat Vella, 46001 València, Valencia, España",39.473036,-0.377109,{'open_now': False},14:50:30,2024-02-09,4.4,163,46001,Ciutat Vella
+Librería Futurama Cómics,OPERATIONAL,"C/ de Guillem de Castro, 53, Extramurs, 46007 València, Valencia, España",39.4700141,-0.3831402,{'open_now': False},14:50:40,2024-02-09,4.7,1807,46007,Extramurs
+AIDA Books&More Valencia,OPERATIONAL,"C/ de Moratín, 11, Ciutat Vella, 46002 València, Valencia, España",39.4711883,-0.3758603,{'open_now': False},14:50:30,2024-02-09,4.7,233,46002,Ciutat Vella
+Auca Llibres Antics,OPERATIONAL,"Plaça de la Mercè, 4, Ciutat Vella, 46001 València, Valencia, España",39.4725064,-0.3777758000000001,{'open_now': False},14:50:30,2024-02-09,4.3,52,46001,Ciutat Vella
+Llig - Llibreria de la Generalitat Valenciana,OPERATIONAL,"Palacio Valeriola, C. de Navellos, 15, Ciutat Vella, 46003 Valencia, España",39.47742179999999,-0.375172,{'open_now': False},14:50:30,2024-02-09,4.2,29,46003,Ciutat Vella
+Papeleria y Libreria Titelles,OPERATIONAL,"C de Campoamor, 103, Algirós, 46022 València, Valencia, España",39.46926870000001,-0.3398348,{'open_now': False},14:50:31,2024-02-09,4.4,114,46022,Camins al Grau
+BIBLIOTECA SOLIDARIA,OPERATIONAL,"Carrer de la Indústria, 8, Camins al Grau, 46022 València, Valencia, España",39.4638965,-0.343652,,14:50:31,2024-02-09,5,2,46022,Camins al Grau
+Librería Papelería El gato de papel,OPERATIONAL,"C/ dels Lleons, 37, Camins al Grau, 46022 València, Valencia, España",39.4680638,-0.3477532,{'open_now': False},14:50:42,2024-02-09,4.8,24,46022,Camins al Grau
+Papelería/Copistería Alfil.be La Amistad,OPERATIONAL,"C/ dels Sants Just i Pastor, 51, Algirós, 46022 València, Valencia, España",39.4697894,-0.3479571,{'open_now': True},14:50:42,2024-02-09,4.1,52,46022,Camins al Grau
+Libreria papeleria Gamma,OPERATIONAL,"C/ de les Illes Canàries, 154, bj, Camins al Grau, 46023 València, Valencia, España",39.4614055,-0.3411167,{'open_now': False},14:50:31,2024-02-09,4.5,160,46023,Camins al Grau
+Papelería Ébano,OPERATIONAL,"Carrer del Mestre Valls, 30, Camins al Grau, 46022 València, Valencia, España",39.4659863,-0.3411729,{'open_now': False},14:50:31,2024-02-09,4.7,29,46022,Camins al Grau
+BiblioCafé Escuela de Escritura,OPERATIONAL,"C/ del Poeta Durán i Tortajada, 20, Algirós, 46022 València, Valencia, España",39.47132149999999,-0.3435621,,14:50:31,2024-02-09,4.8,104,46022,Camins al Grau
+Librería Berlín,OPERATIONAL,"C/ de Polo y Peyrolón, 1, El Pla del Real, 46021 València, Valencia, España",39.4711953,-0.3563137,{'open_now': False},14:50:42,2024-02-09,4.5,307,46021,Pla del Real
+Abacus Cooperativa | Aqua,OPERATIONAL,"C/ de Menorca, 19, Camins al Grau, 46023 València, Valencia, España",39.4566922,-0.3457674,{'open_now': True},14:50:31,2024-02-09,4.1,226,46023,Camins al Grau
+Fundación Padre Juan Schenk,OPERATIONAL,"Carrer de la Indústria, 8, bajo izquierda, Camins al Grau, 46022 València, Valencia, España",39.4638398,-0.3436795,{'open_now': False},14:50:31,2024-02-09,4,9,46022,Camins al Grau
+Libreria La Batisfera,OPERATIONAL,"C/ de Carles Ros, 32, Poblats Marítims, 46011 València, Valencia, España",39.4706271,-0.3285981,{'open_now': False},14:50:31,2024-02-09,5,23,46011,Poblados Marítimos
+Itaca Libreria,OPERATIONAL,"C/ de Sant Vicent Màrtir, 214, Jesús, 46007 València, Valencia, España",39.457271,-0.3838078,,14:50:44,2024-02-09,5,2,46007,Extramurs
+Librería De Lance,OPERATIONAL,"Carrer de l'Uruguai, Jesús, 46007 València, España",39.4550414,-0.3865139,,14:50:43,2024-02-09,3,2,46007,Extramurs
+Libreria Papeleria Helene,OPERATIONAL,"C/ de l'Enginyer José Sirera, 37, Jesús, 46017 València, Valencia, España",39.4461638,-0.3904002,{'open_now': False},14:50:43,2024-02-09,4.7,19,46017,Jesus
+Librería Papelería Seguí,OPERATIONAL,"C/ de Jerónima Galés, 20, Jesús, 46017 València, Valencia, España",39.4539892,-0.3900149000000001,{'open_now': False},14:50:43,2024-02-09,4.6,175,46017,Jesus
+Librería y Antigüedades Monos de San Telmo,OPERATIONAL,"Carrer de l'Uruguai, 59, Jesús, 46007 València, Valencia, España",39.4550507,-0.3865092,{'open_now': False},14:50:43,2024-02-09,5,15,46007,Extramurs
+Librería y espacio cultural Vuelo de palabras,OPERATIONAL,"Av. de Giorgeta, 22, Jesús, 46007 València, Valencia, España",39.4598077,-0.3852763,{'open_now': False},14:50:39,2024-02-09,4.4,9,46007,Extramurs
+Llibreria Paideia,OPERATIONAL,"Carrer José María Mortes Lerma, 13, Patraix, 46014 València, Valencia, España",39.46290030000001,-0.3996192,{'open_now': False},14:50:36,2024-02-09,4.6,73,46014,Olivereta
+Papereria Llibreria Regals Abaco Ml Padi,OPERATIONAL,"Carrer del Dr. Pérez Feliu, 13, Patraix, 46014 València, Valencia, España",39.4603448,-0.402365,{'open_now': False},14:50:36,2024-02-09,3.1,8,46014,Olivereta
+Kiosco Imperial,OPERATIONAL,"C/ de Fra Juníper Serra, 85, Patraix, 46014 València, Valencia, España",39.4636192,-0.4011418,{'open_now': False},14:50:36,2024-02-09,4.6,46,46014,Olivereta
+LIBRERIA GALERADAS,OPERATIONAL,"C/ d'Àngel Guimerà, 44, Extramurs, 46008 València, Valencia, España",39.4698864,-0.3883055,{'open_now': False},14:50:40,2024-02-09,4.8,13,46008,Extramurs
+Libros Fugitivos,OPERATIONAL,"C. Marqués de Zenete, 21, Extramurs, 46007 Valencia, España",39.4646797,-0.3861955,{'open_now': False},14:50:39,2024-02-09,5,297,46007,Extramurs
+Librería Annur,OPERATIONAL,"C/ del Duc de Mandas, 23a, Rascanya, 46019 València, Valencia, España",39.4941533,-0.3697995,{'open_now': False},14:50:37,2024-02-09,4.7,26,46019,Rascanya
+Papelería Mapamundi,OPERATIONAL,"Avinguda de la Constitució, 136, La Saïdia, 46009 València, Valencia, España",39.48995,-0.3753666,{'open_now': False},14:50:37,2024-02-09,4.4,29,46009,Campanar
+Aida Books&More,OPERATIONAL,"C/ de Molinell, 14, La Saïdia, 46010 València, Valencia, España",39.4848506,-0.3684859,{'open_now': False},14:50:37,2024-02-09,4.7,614,46010,Pla del Real
+Dino Papeleria Librería,OPERATIONAL,"Carrer de José Soto Micó, 41, bajo, Jesús, 46017 Valencia, España",39.4402699,-0.3886298,{'open_now': False},14:50:43,2024-02-09,4.9,37,46017,Jesus
+Librería Bangarang,OPERATIONAL,"C/ de l'Historiador Diago, 9, Extramurs, 46007 València, Valencia, España",39.4672334,-0.3841488,{'open_now': False},14:50:40,2024-02-09,4.9,292,46007,Extramurs
+Librerías París Valencia,OPERATIONAL,"C/ de Pelai, 7, Extramurs, 46007 València, Valencia, España",39.4672736,-0.3783433,{'open_now': False},14:50:44,2024-02-09,4.7,3849,46007,Extramurs
+Librería Anticuario,OPERATIONAL,"C/ de Joan Llorenç, 62, Extramurs, 46008 València, Valencia, España",39.4697936,-0.3889463,{'open_now': False},14:50:40,2024-02-09,5,1,46008,Extramurs
+Papelería Libreria Suico,OPERATIONAL,"Brasil, 12, L'Olivereta, 46018 Valencia, España",39.4709932,-0.3956157,{'open_now': False},14:50:40,2024-02-09,4,46,46018,Patraix
+Patrimonio Ediciones,OPERATIONAL,"Carrer de Martí l'Humà, 12, Bajo, Extramurs, 46008 València, Valencia, España",39.4710065,-0.3914091,{'open_now': False},14:50:40,2024-02-09,4.8,4,46008,Extramurs
+papelería-librería-manualidades Quart133 en Valencia,OPERATIONAL,"C/ de Quart, 133, bajo drcha, Extramurs, 46008 Valencia, España",39.4745159,-0.3909117,{'open_now': False},14:50:40,2024-02-09,4.8,36,46008,Extramurs
+Papelería Baleares 18,OPERATIONAL,"Av. de les Balears, 18, Camins al Grau, 46023 València, Valencia, España",39.4628742,-0.354806,{'open_now': False},14:50:42,2024-02-09,4.5,68,46023,Camins al Grau
+A4LAB Copistería Papelería y Libros,OPERATIONAL,"C/ dels Sants Just i Pastor, 13, bajo, Algirós, 46021 València, Valencia, España",39.4709037,-0.3518569,{'open_now': False},14:50:42,2024-02-09,4.5,96,46021,Pla del Real
+Librerías París-Valencia,OPERATIONAL,"Gran Via del Marqués del Túria, 74, L'Eixample, 46005 València, Valencia, España",39.4678718,-0.36614,{'open_now': False},14:50:42,2024-02-09,4.7,970,46005,L'Eixample
+Swift books,OPERATIONAL,"C/ de Cadis, 17, L'Eixample, 46006 València, Valencia, España",39.4634568,-0.374564,{'open_now': False},14:50:44,2024-02-09,4.4,40,46006,L'Eixample
+Book Lovers Valencia,OPERATIONAL,"C/ de Sevilla, 5, L'Eixample, 46006 València, Valencia, España",39.464246,-0.3741408,{'open_now': False},14:50:44,2024-02-09,4.9,193,46006,L'Eixample
+"""Un Poc De Tot"" Papelería Librería",OPERATIONAL,"C/ de la Reina Na Maria, 13, bajo, Ensanche, 46006 València, Valencia, España",39.4615017,-0.3717667,{'open_now': False},14:50:44,2024-02-09,5,37,46006,L'Eixample
+Papelería Alpe,OPERATIONAL,"Carrer del Músic Padilla, 4, L'Eixample, 46005 València, Valencia, España",39.4632094,-0.3707655,{'open_now': False},14:50:44,2024-02-09,4.4,60,46005,L'Eixample
