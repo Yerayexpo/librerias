@@ -24,6 +24,11 @@ try:
 except:
     st.error(f"Error al cargar el archivo listado_con_distritos.csv: {e}")
     st.stop()
+try:
+    df_densidad = pd.read_csv(os.path.join(directorio_actual, "Resultados", "Densidad_distrito.csv"),index_col=0)
+except:
+    st.error(f"Error al cargar el archivo Densidad_distrito.csv: {e}")
+    st.stop()
 
 def borde_geo(feature):
     return {
@@ -96,13 +101,27 @@ if option == 'General':
 elif option == 'Distrito':
     st.markdown("<h3 style='text-align: center; color: #ff8830;'>Mapa  por Distritos</h1>", unsafe_allow_html=True)
     with st.sidebar:
-        df_renta_dinindex = df_renta.set_index('Distritos')
-        anyo = st.selectbox(
-        'Selecciona año',
-        ('2015','2016','2017','2018','2019','2020','2021'),index=6)
-        renta = df_renta_dinindex[anyo]
-        st.write('Renta anual por habitante', )
-        st.dataframe(renta.sort_values(ascending=False),width=220)
+        
+        opcion_mapa = st.selectbox(
+        'Selecciona tipo de mapa',
+        ('Renta', 'Densidad'),index=0)
+
+        if opcion_mapa == 'Renta':
+            df_renta_dinindex = df_renta.set_index('Distritos')
+            anyo = st.selectbox(
+            'Selecciona año',
+            ('2015','2016','2017','2018','2019','2020','2021'),index=6)
+            renta = df_renta_dinindex[anyo]
+            st.write('Renta anual por habitante', )
+            st.dataframe(renta.sort_values(ascending=False),width=220)
+
+        elif opcion_mapa == 'Densidad':
+            anyo = st.selectbox(
+            'Selecciona año',
+            ('1991','1996','2001','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023'),index=12)
+            st.write('Densidad por distrito', )
+            df_densidad_filtr = df_densidad[anyo]
+            st.dataframe(df_densidad_filtr.sort_values(ascending=False),width=220)
 
     mapa = folium.Map(location=(39.47405288846648, -0.3768651911255773), zoom_start=12)
 
@@ -116,17 +135,28 @@ elif option == 'Distrito':
     popup = folium.GeoJsonPopup(fields=['nombre'], aliases=['Distrito:&nbsp;'])
     popup.add_to(geojson_distritos)
 
-    folium.Choropleth(
-        geo_data=geojson_data,
-        name='choropleth',
-        data=df_renta,
-        columns=['Distritos', anyo],
-        key_on='feature.properties.nombre',
-        fill_color='Oranges',
-        fill_opacity=0.7,
-        line_opacity=0.2,
-        legend_name='Renta anual por habitante'
-    ).add_to(mapa)
+    if opcion_mapa == 'Renta':
+        folium.Choropleth(
+            geo_data=geojson_data,
+            name='choropleth',
+            data=df_renta,
+            columns=['Distritos', anyo],
+            key_on='feature.properties.nombre',
+            fill_color='Oranges',
+            fill_opacity=0.7,
+            line_opacity=0.2,
+            legend_name='Renta anual por habitante').add_to(mapa)
+    elif opcion_mapa == 'Densidad':
+        folium.Choropleth(
+            geo_data=geojson_data,
+            name='choropleth',
+            data=df_densidad,
+            columns=['Distritos', anyo],
+            key_on='feature.properties.nombre',
+            fill_color='Oranges',
+            fill_opacity=0.7,
+            line_opacity=0.2,
+            legend_name='Densidad por distrito',).add_to(mapa)
 
     distritos_grupo.add_to(mapa)
     folium.LayerControl().add_to(mapa)
