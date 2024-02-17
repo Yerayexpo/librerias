@@ -1,8 +1,8 @@
 import streamlit as st
 import os
-import folium
 import pandas as pd
 from streamlit_folium import st_folium
+import folium
 import matplotlib.pyplot as plt
 
 directorio_actual = os.path.dirname(__file__)
