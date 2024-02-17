@@ -8,10 +8,22 @@ import matplotlib.pyplot as plt
 directorio_actual = os.path.dirname(__file__)
 
 #cargar csvs
-df_renta = pd.read_csv(os.path.join(directorio_actual, "Resultados", "RentaMedia_Distritos.csv"),index_col=0)
-df_centros = pd.read_csv(os.path.join(directorio_actual, "Resultados", "lista_centros.csv"),index_col=0)
-df_librerias = pd.read_csv(os.path.join(directorio_actual, "Resultados", "listado_con_distritos.csv"),index_col=0)
-df_centros = df_centros.drop_duplicates(subset=['despecific'])
+try:
+    df_renta = pd.read_csv(os.path.join(directorio_actual, "Resultados", "RentaMedia_Distritos.csv"),index_col=0)
+except Exception as e:
+    st.error(f"Error al cargar el archivo RentaMedia_Distritos.csv: {e}")
+    st.stop()
+try:
+   df_centros = pd.read_csv(os.path.join(directorio_actual, "Resultados", "lista_centros.csv"),index_col=0)
+   df_centros = df_centros.drop_duplicates(subset=['despecific'])
+except Exception as e:
+    st.error(f"Error al cargar el archivo lista_centros.csv {e}")
+    st.stop()
+try:
+    df_librerias = pd.read_csv(os.path.join(directorio_actual, "Resultados", "listado_con_distritos.csv"),index_col=0)
+except:
+    st.error(f"Error al cargar el archivo listado_con_distritos.csv: {e}")
+    st.stop()
 
 def borde_geo(feature):
     return {
