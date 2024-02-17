@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 import pandas as pd
-# from streamlit_folium import st_folium
+from streamlit_folium import st_folium
 import folium
 import matplotlib.pyplot as plt
 
