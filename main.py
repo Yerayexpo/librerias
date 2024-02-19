@@ -37,20 +37,19 @@ def borde_geo(feature):
         'weight': 1,           
         'fillOpacity': 0.3    
     }
-st.checkbox(
-        "Viendo desde móvil?", key="center", value=st.session_state.get("center", False)
-    )
 
-    
 if "center" not in st.session_state:
-    layout = "wide"
+    layoutt = "wide"
 else:
-    layout = "centered" if st.session_state.center else "wide"
+    layoutt = "centered" if st.session_state.center else "wide"
 
 st.set_page_config(page_title='Librerias en Valencia', 
                    page_icon='📕', 
-                   layout=layout,)
+                   layout=layoutt,)
 
+st.checkbox(
+        "Viendo desde móvil?", key="center", value=st.session_state.get("center", False)
+    )
 
 with st.sidebar:
 
