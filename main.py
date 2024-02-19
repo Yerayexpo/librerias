@@ -124,7 +124,7 @@ elif option == 'Distrito':
             ('2015','2016','2017','2018','2019','2020','2021'),index=6)
             renta = df_renta_dinindex[anyo]
             st.write('Renta anual por habitante', )
-            st.dataframe(renta.sort_values(ascending=False),width=220)
+            st.dataframe(renta.sort_values(ascending=False),use_container_width =True)
 
         elif opcion_mapa == 'Densidad':
             anyo = st.selectbox(
@@ -132,7 +132,7 @@ elif option == 'Distrito':
             ('1991','1996','2001','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023'),index=12)
             st.write('Población por distrito', )
             df_densidad_filtr = df_densidad[anyo]
-            st.dataframe(df_densidad_filtr.sort_values(ascending=False),width=220)
+            st.dataframe(df_densidad_filtr.sort_values(ascending=False),use_container_width =True)
 
     mapa = folium.Map(location=(39.47405288846648, -0.3768651911255773), zoom_start=12)
 
@@ -243,7 +243,7 @@ elif option == 'Librerias':
             libreria = st.selectbox(
             'Selecciona Libreria',
             (libreria_lista),index=0)
-        st.dataframe(df_librerias_sinlatlong.loc[libreria],width=700)
+        st.dataframe(df_librerias_sinlatlong.loc[libreria],use_container_width =True)
             
 
 elif option == 'Centros Educativos':
@@ -260,7 +260,7 @@ elif option == 'Centros Educativos':
             recuento = df_centros['distrito'].count()
             recuento_filtr = df_centros['distrito'].value_counts()
             st.write('Recuento de centros por distrito: ', recuento)
-            st.dataframe(recuento_filtr,width=220)
+            st.dataframe(recuento_filtr,use_container_width =True)
         else:
             librerias = df_centros[df_centros['distrito'] == dist]['telef']
             recuento_filtr = df_centros[df_centros['distrito'] == dist]['distrito'].value_counts()
@@ -312,7 +312,7 @@ elif option == 'Centros Educativos':
             'Selecciona Centro',
             (lista_cent),index=0)
         df_centros_singeo = df_centros.drop(['Geo Point', 'Geo Shape','dlibre'], axis=1)
-        st.dataframe(df_centros_singeo.loc[df_centros_singeo['despecific']==centro].T,width=700)
+        st.dataframe(df_centros_singeo.loc[df_centros_singeo['despecific']==centro].T,use_container_width =True)
 
 
 elif option == 'Gráficos':  
