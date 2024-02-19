@@ -47,12 +47,12 @@ st.set_page_config(page_title='Librerias en Valencia',
                    page_icon='📕', 
                    layout=layoutt,)
 
-st.checkbox(
-        "Viendo desde móvil?", key="center", value=st.session_state.get("center", False)
-    )
+
 
 with st.sidebar:
-
+    st.checkbox(
+        "Viendo desde móvil?", key="center", value=st.session_state.get("center", False)
+    )
     option = st.selectbox(
         'Selecciona página',
         ('General','Distrito', 'Librerias', 'Centros Educativos','Gráficos'),index=0)
