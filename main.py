@@ -37,26 +37,27 @@ def borde_geo(feature):
         'weight': 1,           
         'fillOpacity': 0.3    
     }
-
-st.set_page_config(page_title='Librerias en Valencia', 
-                   page_icon='📕', 
-                   layout='centered',)
-
-
-with st.sidebar:
-    st.checkbox(
+st.checkbox(
         "Viendo desde móvil?", key="center", value=st.session_state.get("center", False)
     )
-    option = st.selectbox(
-        'Selecciona página',
-        ('General','Distrito', 'Librerias', 'Centros Educativos','Gráficos'),index=0)
+
     
 if "center" not in st.session_state:
     layout = "wide"
 else:
     layout = "centered" if st.session_state.center else "wide"
 
-st.set_page_config(layout=layout)
+st.set_page_config(page_title='Librerias en Valencia', 
+                   page_icon='📕', 
+                   layout=layout,)
+
+
+with st.sidebar:
+
+    option = st.selectbox(
+        'Selecciona página',
+        ('General','Distrito', 'Librerias', 'Centros Educativos','Gráficos'),index=0)
+
 
 if option == 'General':
     st.markdown("<h3 style='text-align: center; color: #ff8830;'>Mapa general</h1>", unsafe_allow_html=True)
