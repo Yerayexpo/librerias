@@ -20,7 +20,7 @@ except Exception as e:
     st.error(f"Error al cargar el archivo lista_centros.csv {e}")
     st.stop()
 try:
-    df_librerias = pd.read_csv(os.path.join(directorio_actual, "Resultados", "listado_con_distritos.csv"),index_col=0)
+    df_librerias = pd.read_csv(os.path.join(directorio_actual, "Resultados", "listado_con_distritos.csv"),index_col=1)
 except:
     st.error(f"Error al cargar el archivo listado_con_distritos.csv: {e}")
     st.stop()
