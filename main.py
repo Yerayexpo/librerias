@@ -38,14 +38,24 @@ def borde_geo(feature):
         'fillOpacity': 0.3    
     }
 
-st.set_page_config(page_title='Librerias en Valencia', 
-                   page_icon='📕', 
-                   layout="centered",)
+
 
 with st.sidebar:
+    st.checkbox(
+        "Viendo desde móvil?", key="center", value=st.session_state.get("center", False)
+    )
     option = st.selectbox(
         'Selecciona página',
         ('General','Distrito', 'Librerias', 'Centros Educativos','Gráficos'),index=0)
+    
+if "center" not in st.session_state:
+    layout = "wide"
+else:
+    layout = "centered" if st.session_state.center else "wide"
+
+st.set_page_config(page_title='Librerias en Valencia', 
+                   page_icon='📕', 
+                   layout=layout,)
     
 if option == 'General':
     st.markdown("<h3 style='text-align: center; color: #ff8830;'>Mapa general</h1>", unsafe_allow_html=True)
@@ -104,7 +114,7 @@ elif option == 'Distrito':
         
         opcion_mapa = st.selectbox(
         'Selecciona tipo de mapa',
-        ('Renta', 'Densidad'),index=0)
+        ('Renta', 'Población'),index=0)
 
         if opcion_mapa == 'Renta':
             df_renta_dinindex = df_renta.set_index('Distritos')
@@ -119,7 +129,7 @@ elif option == 'Distrito':
             anyo = st.selectbox(
             'Selecciona año',
             ('1991','1996','2001','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023'),index=12)
-            st.write('Densidad por distrito', )
+            st.write('Población por distrito', )
             df_densidad_filtr = df_densidad[anyo]
             st.dataframe(df_densidad_filtr.sort_values(ascending=False),width=220)
 
@@ -156,7 +166,7 @@ elif option == 'Distrito':
             fill_color='Oranges',
             fill_opacity=0.7,
             line_opacity=0.2,
-            legend_name='Densidad por distrito',).add_to(mapa)
+            legend_name='Población por distrito',).add_to(mapa)
 
     distritos_grupo.add_to(mapa)
     folium.LayerControl().add_to(mapa)
@@ -181,7 +191,7 @@ elif option == 'Librerias':
             librerias = df_librerias[df_librerias['distrito'] == dist]['rating']
             recuento = df_librerias[df_librerias['distrito'] == dist]['distrito'].value_counts()
             st.write('Recuento de librerias por distrito: ', recuento[0])
-        st.dataframe(librerias.sort_values(ascending=False),width=220)
+        st.dataframe(librerias.sort_values(ascending=False),use_container_width =True)
        
     mapa = folium.Map(location=(39.47405288846648, -0.3768651911255773), zoom_start=12)
 
