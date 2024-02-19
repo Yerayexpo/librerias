@@ -38,6 +38,9 @@ def borde_geo(feature):
         'fillOpacity': 0.3    
     }
 
+st.set_page_config(page_title='Librerias en Valencia', 
+                   page_icon='📕', 
+                   layout='centered',)
 
 
 with st.sidebar:
@@ -53,10 +56,8 @@ if "center" not in st.session_state:
 else:
     layout = "centered" if st.session_state.center else "wide"
 
-st.set_page_config(page_title='Librerias en Valencia', 
-                   page_icon='📕', 
-                   layout=layout,)
-    
+st.set_page_config(layout=layout)
+
 if option == 'General':
     st.markdown("<h3 style='text-align: center; color: #ff8830;'>Mapa general</h1>", unsafe_allow_html=True)
     mapa = folium.Map(location=(39.47405288846648, -0.3768651911255773), zoom_start=12)
