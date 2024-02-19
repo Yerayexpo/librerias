@@ -126,7 +126,7 @@ elif option == 'Distrito':
             st.write('Renta anual por habitante', )
             st.dataframe(renta.sort_values(ascending=False),use_container_width =True)
 
-        elif opcion_mapa == 'Densidad':
+        elif opcion_mapa == 'Población':
             anyo = st.selectbox(
             'Selecciona año',
             ('1991','1996','2001','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023'),index=12)
@@ -157,7 +157,7 @@ elif option == 'Distrito':
             fill_opacity=0.7,
             line_opacity=0.2,
             legend_name='Renta anual por habitante').add_to(mapa)
-    elif opcion_mapa == 'Densidad':
+    elif opcion_mapa == 'Población':
         folium.Choropleth(
             geo_data=geojson_data,
             name='choropleth',
