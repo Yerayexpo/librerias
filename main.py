@@ -4,6 +4,8 @@ import pandas as pd
 from streamlit_folium import st_folium
 import folium
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 directorio_actual = os.path.dirname(__file__)
 
@@ -29,6 +31,20 @@ try:
 except:
     st.error(f"Error al cargar el archivo Densidad_distrito.csv: {e}")
     st.stop()
+try:
+    df_unido = pd.read_csv(os.path.join(directorio_actual, "Resultados", "Locales_unidos.csv"),index_col=0)
+except:
+    st.error(f"Error al cargar el archivo Locales_unidos.csv: {e}")
+    st.stop()
+try:
+    df_renta_secc = pd.read_csv(os.path.join(directorio_actual, "Resultados", "renta_seccion_2021.csv"),index_col=0)
+    df_renta_secc['Secciones'] = df_renta_secc['Secciones'].astype(str)
+    df_renta_secc['Secciones'] = df_renta_secc['Secciones'].apply(lambda x: x.zfill(5))
+    df_renta_secc['Secciones'] = df_renta_secc['Secciones'].str[:2] + df_renta_secc['Secciones'].str[3:]
+
+except:
+    st.error(f"Error al cargar el archivo Densidad_distrito.csv: {e}")
+    st.stop()
 
 def borde_geo(feature):
     return {
@@ -37,6 +53,24 @@ def borde_geo(feature):
         'weight': 1,           
         'fillOpacity': 0.3    
     }
+
+distritos_valencia = {
+    1: "Ciutat Vella",
+    2: "Eixample",
+    3: "Extramurs",
+    4: "Campanar",
+    5: "La Saïdia",
+    6: "Pla del Real",
+    7: "Olivereta",
+    8: "Patraix",
+    9: "Jesús",
+    10: "Quatre Carreres",
+    11: "Poblats Marítims",
+    12: "Camins al Grau",
+    13: "Algirós",
+    14: "Benimaclet",
+    15: "Rascanya"
+}
 
 if "center" not in st.session_state:
     layoutt = "wide"
@@ -55,7 +89,7 @@ with st.sidebar:
     )
     option = st.selectbox(
         'Selecciona página',
-        ('General','Distrito', 'Librerias', 'Centros Educativos','Gráficos'),index=0)
+        ('General','Distrito', 'Secciones','Librerias', 'Centros Educativos','Gráficos','Locales'),index=0)
 
 
 if option == 'General':
@@ -137,6 +171,8 @@ elif option == 'Distrito':
     mapa = folium.Map(location=(39.47405288846648, -0.3768651911255773), zoom_start=12)
 
     distritos_grupo = folium.FeatureGroup(name='Distritos')
+    centros_educativos = folium.FeatureGroup(name='Centros Educativos',show=False)
+    librerias_grupo = folium.FeatureGroup(name='Librerias',show=False)
 
     geojson_file = os.path.join(directorio_actual, "datos", "distritos_vlc.geojson")
     geojson_data = open(geojson_file, 'r', encoding='utf-8-sig').read()
@@ -169,12 +205,95 @@ elif option == 'Distrito':
             line_opacity=0.2,
             legend_name='Población por distrito',).add_to(mapa)
 
+    for index, row in df_centros.iterrows():
+        nombre = row['dlibre']
+        lat, lon = map(float, row['Geo Point'].split(', '))
+        marcador = folium.Marker(location=[lat, lon], popup=nombre, icon=folium.Icon(color='beige', icon='graduation-cap', prefix='fa'))
+        marcador.add_to(centros_educativos)
+
+    for index, row in df_librerias.iterrows():
+        nombre = index
+        direccion = row['formatted_address']
+        latitud = row['latitud']
+        longitud = row['longitud']
+        folium.Marker(location=[latitud, longitud], popup=f"{nombre}: {direccion}",icon=folium.Icon( color='orange',icon='book',prefix='fa')).add_to(librerias_grupo)
+
+    centros_educativos.add_to(mapa)
+    librerias_grupo.add_to(mapa)
     distritos_grupo.add_to(mapa)
+
     folium.LayerControl().add_to(mapa)
 
     mapa_html = mapa._repr_html_()
 
     st_folium(mapa,width=700)
+
+elif option == 'Secciones':
+    st.markdown("<h3 style='text-align: center; color: #ff8830;'>Mapa  por Secciones</h1>", unsafe_allow_html=True)
+    with st.sidebar:
+        df_renta_secc2 = df_renta_secc
+        df_renta_secc2['Distritos'] = df_renta_secc2['Distritos'].map(distritos_valencia)
+        df_renta_secc_distrito = df_renta_secc2.set_index('Distritos')
+        st.write('Renta anual por habitante', )
+        st.dataframe(df_renta_secc_distrito[['Secciones','Total']].sort_values(by='Total',ascending=False),use_container_width =True)
+    min_value = df_renta_secc['Total'].min()
+    max_value = df_renta_secc['Total'].max()
+    bins = np.linspace(min_value, max_value, num=6).tolist()
+    mapa = folium.Map(location=(39.47405288846648, -0.3768651911255773), zoom_start=12)
+
+    distritos_grupo = folium.FeatureGroup(name='Distritos')
+    centros_educativos = folium.FeatureGroup(name='Centros Educativos',show=False)
+    librerias_grupo = folium.FeatureGroup(name='Librerias',show=False)
+
+    geojson_file = os.path.join(directorio_actual, "datos", "seccions-censals-secciones-censales.geojson")
+
+    geojson_data = open(geojson_file, 'r', encoding='utf-8-sig').read()
+    filtered_geojson_data = {
+        'type': 'FeatureCollection',
+        'features': [feature for feature in folium.GeoJson(geojson_data).data['features'] if int(feature['properties']['coddistrit']) <= 15]
+    }
+
+    for feature in filtered_geojson_data['features']:
+        cod_dist_secc = feature['properties'].get('coddistsecc')
+        feature['properties']['codsecc'] = cod_dist_secc if cod_dist_secc is not None else 0
+    geojson_distritos = folium.GeoJson(filtered_geojson_data, name='distritos',style_function=borde_geo).add_to(distritos_grupo)
+    popup = folium.GeoJsonPopup(fields=['coddistrit','codsecc'], aliases=['Distrito:&nbsp;','Seccion:&nbsp;'])
+    popup.add_to(geojson_distritos)
+    folium.Choropleth(
+        geo_data=filtered_geojson_data,
+        name='choropleth',
+        data=df_renta_secc,
+        columns=['Secciones', 'Total'],
+        key_on='feature.properties.codsecc',
+        fill_color='YlOrRd',
+        fill_opacity=0.7,
+        line_opacity=0.2,
+        legend_name='Renta neta por habitante 2021',
+    ).add_to(mapa)
+
+    for index, row in df_centros.iterrows():
+        nombre = row['dlibre']
+        lat, lon = map(float, row['Geo Point'].split(', '))
+        marcador = folium.Marker(location=[lat, lon], popup=nombre, icon=folium.Icon(color='beige', icon='graduation-cap', prefix='fa'))
+        marcador.add_to(centros_educativos)
+
+    for index, row in df_librerias.iterrows():
+        nombre = index
+        direccion = row['formatted_address']
+        latitud = row['latitud']
+        longitud = row['longitud']
+        folium.Marker(location=[latitud, longitud], popup=f"{nombre}: {direccion}",icon=folium.Icon( color='orange',icon='book',prefix='fa')).add_to(librerias_grupo)
+
+    centros_educativos.add_to(mapa)
+    librerias_grupo.add_to(mapa)
+    distritos_grupo.add_to(mapa)
+
+    folium.LayerControl().add_to(mapa)
+
+    mapa_html = mapa._repr_html_()
+
+    st_folium(mapa,width=700)
+
 
 elif option == 'Librerias':
     st.markdown("<h3 style='text-align: center; color: #ff8830;'>Mapa de Librerias </h1>", unsafe_allow_html=True)
@@ -223,8 +342,8 @@ elif option == 'Librerias':
                 folium.Marker(location=[latitud, longitud], popup=f"{nombre},{direccion}",icon=folium.Icon(icon='book',color='orange', prefix='fa')).add_to(librerias_grupo)
 
     librerias_grupo.add_to(mapa)
-
     distritos_grupo.add_to(mapa)
+
     folium.LayerControl().add_to(mapa)
 
     mapa_html = mapa._repr_html_()
@@ -298,6 +417,7 @@ elif option == 'Centros Educativos':
 
     centros_educativos.add_to(mapa)
     distritos_grupo.add_to(mapa)
+
     folium.LayerControl().add_to(mapa)
 
     mapa_html = mapa._repr_html_()
@@ -316,19 +436,31 @@ elif option == 'Centros Educativos':
 
 
 elif option == 'Gráficos':  
-    st.markdown("<h3 style='text-align: center; color: #33FF86;'>Gráficos</h1>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: #ff8830;'>Gráficos de Renta y Población</h3>", unsafe_allow_html=True)
     df_renta_grafico = df_renta.set_index('Distritos')
-    df_renta_grafico = df_renta_grafico.transpose()
-    estilos = ['-', '--', '-.', ':']
-    colores = ['b', 'g', 'r', 'c', 'm', 'y', 'k'] 
 
+    min_year = int(df_renta_grafico.columns.min())
+    max_year = int(df_renta_grafico.columns.max())
+
+    num_distritos = st.sidebar.slider("Distritos para renta", min_value=1, max_value=len(df_renta_grafico), value=5)
+
+    selected_years = st.sidebar.slider("Años para renta", min_value=min_year, max_value=max_year, value=(min_year, max_year))
+    selected_years_str = list(map(str, range(selected_years[0], selected_years[1]+1)))
+
+    df_renta_grafico = df_renta_grafico.sort_values(by='2021', ascending=False).head(num_distritos)
+    df_renta_grafico = df_renta_grafico[selected_years_str]
+    df_renta_grafico = df_renta_grafico.transpose()
+
+    estilos = ['-', '--', '-.', ':']
+    colores = ['b', 'g', 'r', 'c', 'm', 'y', 'k']
+    plt.rcParams.update({'font.size': 14})
     plt.figure(figsize=(14, 8))
     for i, distrito in enumerate(df_renta_grafico.columns):
         estilo = estilos[i % len(estilos)]
         color = colores[i % len(colores)]
         plt.plot(df_renta_grafico.index, df_renta_grafico[distrito], label=distrito, linestyle=estilo, color=color)
 
-    plt.title('Evolución de la renta neta media por persona en los distritos de València')
+    plt.title('Evolución Anual de la Renta por Distrito')
     plt.xlabel('Año')
     plt.ylabel('Renta neta media por persona')
     plt.xticks(rotation=45)
@@ -337,3 +469,69 @@ elif option == 'Gráficos':
     plt.tight_layout()
     st.pyplot(plt)
 
+    df_densidad_grafico = df_densidad.set_index('Distritos')
+
+    min_year = int(df_densidad_grafico.columns.min())
+    max_year = int(df_densidad_grafico.columns.max())
+
+    df_densidad_grafico.columns = df_densidad_grafico.columns.astype(int)
+
+    num_distritos = st.sidebar.slider("Distritos para población", key="num_distritos", min_value=1, max_value=len(df_densidad_grafico), value=5)
+
+    selected_years = st.sidebar.slider("Años para población", key="selected_years", min_value=min_year, max_value=max_year, value=(min_year, max_year))
+
+    df_densidad_grafico = df_densidad_grafico.sort_values(by=max_year, ascending=False).head(num_distritos)
+    df_densidad_grafico = df_densidad_grafico.loc[:, selected_years[0]:selected_years[1]]
+
+
+    plt.figure(figsize=(12, 8))
+    for distrito in df_densidad_grafico.index:
+        plt.plot(df_densidad_grafico.columns, df_densidad_grafico.loc[distrito], label=distrito)
+
+    plt.title('Evolución Anual de la Población por Distrito')
+    plt.xlabel('Año')
+    plt.ylabel('Población')
+    plt.legend(title='Distrito', loc='upper left', bbox_to_anchor=(1, 1))
+    plt.grid(True)
+    plt.tight_layout()
+
+    st.pyplot(plt)
+
+elif option == 'Locales':
+    st.markdown("<h3 style='text-align: center; color: #ff8830;'>Locales</h3>", unsafe_allow_html=True)
+    df_unido_graficos = df_unido
+    df_unido_graficos['precio'] = df_unido_graficos['precio'].str.replace('/mes', '').str.replace('.','').str.replace('[\€,]', '', regex=True).astype(int)
+    df_unido_graficos['metros'] = df_unido_graficos['metros'].str.replace('m²', '').str.replace('.','').astype(int)
+    locales_por_distrito = df_unido_graficos['distrito'].value_counts()
+
+    num_distritos = st.sidebar.slider("Selecciona la cantidad de distritos a mostrar", min_value=1, max_value=len(locales_por_distrito), value=5)
+
+    metros_min = st.sidebar.slider("Selecciona el mínimo de metros cuadrados", min_value=0, max_value=500, value=100)
+    precio_max = st.sidebar.slider("Selecciona el máximo de precio", min_value=100, max_value=3000, value=1000)
+    top_distritos = locales_por_distrito.head(num_distritos)
+
+    df_filtrado = df_unido_graficos.loc[(df_unido_graficos['metros'] >= metros_min) & (df_unido_graficos['precio'] <= precio_max)]
+
+    locales_por_distrito_filtrado = df_filtrado['distrito'].value_counts().head(num_distritos)
+    plt.figure(figsize=(10, 6))
+    locales_por_distrito_filtrado.plot(kind='bar', color='lightblue')
+    plt.title('Cantidad de Locales por Distrito')
+    plt.xlabel('Distrito')
+    plt.ylabel('Cantidad de Locales')
+    plt.xticks(rotation=45)
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    st.pyplot(plt)
+
+    with st.expander('Ver Locales'):
+        distrito = list(df_unido['distrito'].unique())
+        distrito.insert(0,'Todos')
+        dist = st.selectbox(
+        'Selecciona Distrito',
+        (distrito),index=0)
+        if dist == 'Todos':
+            df_filtrado = df_unido.loc[(df_unido['metros'] >= metros_min) & (df_unido['precio'] <= precio_max)]
+            st.dataframe(df_filtrado,use_container_width =True)
+        else:
+            df_filtrado = df_unido.loc[(df_unido['metros'] >= metros_min) & (df_unido['precio'] <= precio_max) & (df_unido['distrito'] == dist)]
+            st.dataframe(df_filtrado,use_container_width =True)
