@@ -163,7 +163,7 @@ elif option == 'Distrito':
         elif opcion_mapa == 'Población':
             anyo = st.selectbox(
             'Selecciona año',
-            ('1991','1996','2001','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023'),index=12)
+            ('1991','1996','2001','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023'),index=13)
             st.write('Población por distrito', )
             df_densidad_filtr = df_densidad[anyo]
             st.dataframe(df_densidad_filtr.sort_values(ascending=False),use_container_width =True)
@@ -514,7 +514,7 @@ elif option == 'Locales':
 
     locales_por_distrito_filtrado = df_filtrado['distrito'].value_counts().head(num_distritos)
     plt.figure(figsize=(10, 6))
-    locales_por_distrito_filtrado.plot(kind='bar', color='lightblue')
+    locales_por_distrito_filtrado.plot(kind='bar', color='orange')
     plt.title('Cantidad de Locales por Distrito')
     plt.xlabel('Distrito')
     plt.ylabel('Cantidad de Locales')
