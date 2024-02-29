@@ -124,7 +124,7 @@ if option == 'General':
     for index, row in df_centros.iterrows():
         nombre = row['dlibre']
         lat, lon = map(float, row['Geo Point'].split(', '))
-        marcador = folium.Marker(location=[lat, lon], popup=nombre, icon=folium.Icon(color='beige', icon='graduation-cap', prefix='fa'))
+        marcador = folium.Marker(location=[lat, lon], popup=nombre, icon=folium.Icon(color='green', icon='graduation-cap', prefix='fa'))
         marcador.add_to(centros_educativos)
 
     for index, row in df_librerias.iterrows():
@@ -132,7 +132,7 @@ if option == 'General':
         direccion = row['formatted_address']
         latitud = row['latitud']
         longitud = row['longitud']
-        folium.Marker(location=[latitud, longitud], popup=f"{nombre}: {direccion}",icon=folium.Icon( color='orange',icon='book',prefix='fa')).add_to(librerias_grupo)
+        folium.Marker(location=[latitud, longitud], popup=f"{nombre}: {direccion}",icon=folium.Icon( color='red',icon='book',prefix='fa')).add_to(librerias_grupo)
 
     centros_educativos.add_to(mapa)
     librerias_grupo.add_to(mapa)
@@ -208,7 +208,7 @@ elif option == 'Distrito':
     for index, row in df_centros.iterrows():
         nombre = row['dlibre']
         lat, lon = map(float, row['Geo Point'].split(', '))
-        marcador = folium.Marker(location=[lat, lon], popup=nombre, icon=folium.Icon(color='beige', icon='graduation-cap', prefix='fa'))
+        marcador = folium.Marker(location=[lat, lon], popup=nombre, icon=folium.Icon(color='green', icon='graduation-cap', prefix='fa'))
         marcador.add_to(centros_educativos)
 
     for index, row in df_librerias.iterrows():
@@ -216,7 +216,7 @@ elif option == 'Distrito':
         direccion = row['formatted_address']
         latitud = row['latitud']
         longitud = row['longitud']
-        folium.Marker(location=[latitud, longitud], popup=f"{nombre}: {direccion}",icon=folium.Icon( color='orange',icon='book',prefix='fa')).add_to(librerias_grupo)
+        folium.Marker(location=[latitud, longitud], popup=f"{nombre}: {direccion}",icon=folium.Icon( color='red',icon='book',prefix='fa')).add_to(librerias_grupo)
 
     centros_educativos.add_to(mapa)
     librerias_grupo.add_to(mapa)
@@ -274,7 +274,7 @@ elif option == 'Secciones':
     for index, row in df_centros.iterrows():
         nombre = row['dlibre']
         lat, lon = map(float, row['Geo Point'].split(', '))
-        marcador = folium.Marker(location=[lat, lon], popup=nombre, icon=folium.Icon(color='beige', icon='graduation-cap', prefix='fa'))
+        marcador = folium.Marker(location=[lat, lon], popup=nombre, icon=folium.Icon(color='green', icon='graduation-cap', prefix='fa'))
         marcador.add_to(centros_educativos)
 
     for index, row in df_librerias.iterrows():
@@ -282,7 +282,7 @@ elif option == 'Secciones':
         direccion = row['formatted_address']
         latitud = row['latitud']
         longitud = row['longitud']
-        folium.Marker(location=[latitud, longitud], popup=f"{nombre}: {direccion}",icon=folium.Icon( color='orange',icon='book',prefix='fa')).add_to(librerias_grupo)
+        folium.Marker(location=[latitud, longitud], popup=f"{nombre}: {direccion}",icon=folium.Icon( color='red',icon='book',prefix='fa')).add_to(librerias_grupo)
 
     centros_educativos.add_to(mapa)
     librerias_grupo.add_to(mapa)
@@ -332,14 +332,14 @@ elif option == 'Librerias':
             direccion = row['formatted_address']
             latitud = row['latitud']
             longitud = row['longitud']
-            folium.Marker(location=[latitud, longitud], popup=f"{nombre},{direccion}",icon=folium.Icon(icon='book',color='orange', prefix='fa')).add_to(librerias_grupo)
+            folium.Marker(location=[latitud, longitud], popup=f"{nombre},{direccion}",icon=folium.Icon(icon='book',color='red', prefix='fa')).add_to(librerias_grupo)
         else:
             if row['distrito'] == dist:
                 nombre = index
                 direccion = row['formatted_address']
                 latitud = row['latitud']
                 longitud = row['longitud']
-                folium.Marker(location=[latitud, longitud], popup=f"{nombre},{direccion}",icon=folium.Icon(icon='book',color='orange', prefix='fa')).add_to(librerias_grupo)
+                folium.Marker(location=[latitud, longitud], popup=f"{nombre},{direccion}",icon=folium.Icon(icon='book',color='red', prefix='fa')).add_to(librerias_grupo)
 
     librerias_grupo.add_to(mapa)
     distritos_grupo.add_to(mapa)
@@ -404,14 +404,14 @@ elif option == 'Centros Educativos':
             nombre = row['despecific']
             tipo = row['dgenerica_']
             lat, lon = map(float, row['Geo Point'].split(', '))
-            marcador = folium.Marker(location=[lat, lon], popup=str(nombre) + ' ' + str(tipo), icon=folium.Icon(color='beige', icon='graduation-cap', prefix='fa'))
+            marcador = folium.Marker(location=[lat, lon], popup=str(nombre) + ' ' + str(tipo), icon=folium.Icon(color='green', icon='graduation-cap', prefix='fa'))
             marcador.add_to(centros_educativos)
         else:
             if row['distrito'] == dist:
                 nombre = row['despecific']
                 tipo = row['dgenerica_']
                 lat, lon = map(float, row['Geo Point'].split(', '))
-                marcador = folium.Marker(location=[lat, lon], popup=str(nombre) + ' ' + str(tipo), icon=folium.Icon(color='beige', icon='graduation-cap', prefix='fa'))
+                marcador = folium.Marker(location=[lat, lon], popup=str(nombre) + ' ' + str(tipo), icon=folium.Icon(color='green', icon='graduation-cap', prefix='fa'))
 
                 marcador.add_to(centros_educativos)    
 
