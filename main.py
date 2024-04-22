@@ -109,6 +109,9 @@ if option == 'General':
     popup = folium.GeoJsonPopup(fields=['nombre'], aliases=['Distrito:&nbsp;'])
     popup.add_to(geojson_distritos)
 
+    objetivo = folium.Marker(location=[39.47218204154307, -0.38856135262490216], popup='Nuestra Libreria!', icon=folium.Icon(color='green', icon='star', prefix='fa'))
+    objetivo.add_to(mapa)
+
     folium.Choropleth(
         geo_data=geojson_data,
         name='choropleth',
@@ -181,6 +184,9 @@ elif option == 'Distrito':
 
     popup = folium.GeoJsonPopup(fields=['nombre'], aliases=['Distrito:&nbsp;'])
     popup.add_to(geojson_distritos)
+
+    objetivo = folium.Marker(location=[39.47218204154307, -0.38856135262490216], popup='Nuestra Libreria!', icon=folium.Icon(color='green', icon='star', prefix='fa'))
+    objetivo.add_to(mapa)
 
     if opcion_mapa == 'Renta':
         folium.Choropleth(
@@ -271,6 +277,9 @@ elif option == 'Secciones':
         legend_name='Renta neta por habitante 2021',
     ).add_to(mapa)
 
+    objetivo = folium.Marker(location=[39.47218204154307, -0.38856135262490216], popup='Nuestra Libreria!', icon=folium.Icon(color='green', icon='star', prefix='fa'))
+    objetivo.add_to(mapa)
+
     for index, row in df_centros.iterrows():
         nombre = row['dlibre']
         lat, lon = map(float, row['Geo Point'].split(', '))
@@ -326,20 +335,23 @@ elif option == 'Librerias':
     popup = folium.GeoJsonPopup(fields=['nombre'], aliases=['Distrito:&nbsp;'])
     popup.add_to(geojson_distritos)
 
+    objetivo = folium.Marker(location=[39.47218204154307, -0.38856135262490216], popup='Nuestra Libreria!', icon=folium.Icon(color='green', icon='star', prefix='fa'))
+    objetivo.add_to(mapa)
+
     for index, row in df_librerias.iterrows():
         if dist == 'Todos':
             nombre = index
             direccion = row['formatted_address']
             latitud = row['latitud']
             longitud = row['longitud']
-            folium.Marker(location=[latitud, longitud], popup=f"{nombre},{direccion}",icon=folium.Icon(icon='book',color='red', prefix='fa')).add_to(librerias_grupo)
+            folium.Marker(location=[latitud, longitud], popup=f"{nombre}",icon=folium.Icon(icon='book',color='red', prefix='fa')).add_to(librerias_grupo)
         else:
             if row['distrito'] == dist:
                 nombre = index
                 direccion = row['formatted_address']
                 latitud = row['latitud']
                 longitud = row['longitud']
-                folium.Marker(location=[latitud, longitud], popup=f"{nombre},{direccion}",icon=folium.Icon(icon='book',color='red', prefix='fa')).add_to(librerias_grupo)
+                folium.Marker(location=[latitud, longitud], popup=f"{nombre}",icon=folium.Icon(icon='book',color='red', prefix='fa')).add_to(librerias_grupo)
 
     librerias_grupo.add_to(mapa)
     distritos_grupo.add_to(mapa)
@@ -399,19 +411,22 @@ elif option == 'Centros Educativos':
     popup = folium.GeoJsonPopup(fields=['nombre'], aliases=['Distrito:&nbsp;'])
     popup.add_to(geojson_distritos)
 
+    objetivo = folium.Marker(location=[39.47218204154307, -0.38856135262490216], popup='Nuestra Libreria!', icon=folium.Icon(color='green', icon='star', prefix='fa'))
+    objetivo.add_to(mapa)
+
     for index, row in df_centros.iterrows():
         if dist == 'Todos':
             nombre = row['despecific']
             tipo = row['dgenerica_']
             lat, lon = map(float, row['Geo Point'].split(', '))
-            marcador = folium.Marker(location=[lat, lon], popup=str(nombre) + ' ' + str(tipo), icon=folium.Icon(color='green', icon='graduation-cap', prefix='fa'))
+            marcador = folium.Marker(location=[lat, lon], popup=str(nombre) + ' ' + str(tipo), icon=folium.Icon(color='lightgray', icon='graduation-cap', prefix='fa'))
             marcador.add_to(centros_educativos)
         else:
             if row['distrito'] == dist:
                 nombre = row['despecific']
                 tipo = row['dgenerica_']
                 lat, lon = map(float, row['Geo Point'].split(', '))
-                marcador = folium.Marker(location=[lat, lon], popup=str(nombre) + ' ' + str(tipo), icon=folium.Icon(color='green', icon='graduation-cap', prefix='fa'))
+                marcador = folium.Marker(location=[lat, lon], popup=str(nombre) + ' ' + str(tipo), icon=folium.Icon(color='lightgray', icon='graduation-cap', prefix='fa'))
 
                 marcador.add_to(centros_educativos)    
 
