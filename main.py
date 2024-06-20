@@ -144,7 +144,7 @@ if option == 'General':
 
     mapa_html = mapa._repr_html_()
 
-    st_folium(mapa,width=700)
+    st_folium(mapa)
 
 elif option == 'Distrito':
     st.markdown("<h3 style='text-align: center; color: #ff8830;'>Mapa  por Distritos</h1>", unsafe_allow_html=True)
